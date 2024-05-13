@@ -6,17 +6,17 @@ import _ from 'lodash'
 // const path1 = './dist1/app.asar.unpacked/node_modules'
 // const pathA = './dist2/app.asar.unpacked/node_modules'
 
-// const path1 = './dist1/asar/node_modules'
-// const pathA = './dist2/asar/node_modules'
+const path1 = './src-new/app/node_modules'
+const pathA = './src-old/app/node_modules'
 
-const winPath1 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\xiezuo\\resources\\app.asar.unpacked\\node_modules'
-const winPath2 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\WOA\\resources\\app.asar.unpacked\\node_modules'
+// const winPath1 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\xiezuo\\resources\\app.asar.unpacked\\node_modules'
+// const winPath2 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\WOA\\resources\\app.asar.unpacked\\node_modules'
 
-const winPath3 = './dist1/node_modules'
-const winPath4 = './dist2/node_modules'
+// const winPath3 = './dist1/node_modules'
+// const winPath4 = './dist2/node_modules'
 
-const dllPath1 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\xiezuo'
-const dllPath2 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\WOA'
+// const dllPath1 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\xiezuo'
+// const dllPath2 = 'C:\\Users\\kingsoft\\AppData\\Local\\Programs\\WOA'
 
 async function gen(p) {
   const map =new Map()
@@ -42,7 +42,7 @@ async function gen(p) {
   return { map, pkgs, size: _.sum(pss.map(item => item.size)) }
 }
 
-Promise.all([gen(dllPath1), gen(dllPath2)]).then(([a, b]) => {
+Promise.all([gen(path1), gen(pathA)]).then(([a, b]) => {
   // console.log(a.pkgs)
   // console.log(b.pkgs)
 
